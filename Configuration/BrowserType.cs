@@ -13,6 +13,7 @@ namespace BDD_Specflow_Selenium.Configuration
         Edge,
         Safari,
         IE,
+        PhantomJS,
         None
     }
 }

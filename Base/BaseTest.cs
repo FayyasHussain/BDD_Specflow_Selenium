@@ -1,7 +1,6 @@
 ﻿using BDD_Specflow_Selenium.Configuration;
 using BDD_Specflow_Selenium.Constants;
 using BDD_Specflow_Selenium.CustomException;
-using BDD_Specflow_Selenium.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -9,11 +8,6 @@ using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Safari;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BDD_Specflow_Selenium.Base
 {
