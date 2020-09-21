@@ -8,6 +8,7 @@ using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Safari;
+using System;
 
 namespace BDD_Specflow_Selenium.Base
 {
@@ -52,6 +53,11 @@ namespace BDD_Specflow_Selenium.Base
                         throw new NoSuitableDriverFoundException("Driver not found : " + ObjectRepository.Config.GetBrowserType());
                     }
             }
+
+            // I dont think below code would be useful in real time.
+            //ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(4);
+            // ObjectRepository.Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(4);
+
         }
 
         private static IWebDriver GetIEDriver()

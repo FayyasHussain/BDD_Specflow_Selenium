@@ -47,6 +47,14 @@ namespace BDD_Specflow_Selenium.ComponentHelper
             return wait.Until(d => d.FindElement(by));
         }
 
+        private Func<IWebDriver,IWebElement> AnonymousFunction(By by)
+        {
+            return x =>
+            {
+              return  ObjectRepository.Driver.FindElement(by);
+            };
+        }
+
         public static bool CheckElementExists(By by, int time)
         {
             try
@@ -83,10 +91,8 @@ namespace BDD_Specflow_Selenium.ComponentHelper
 
         private static WebDriverWait Webdriverwait(int time)
         {
-            WebDriverWait wait = new WebDriverWait(ObjectRepository.Driver, TimeSpan.FromMilliseconds(time))
-            {
-                PollingInterval = TimeSpan.FromMilliseconds(500)
-            };
+            WebDriverWait wait = new WebDriverWait(ObjectRepository.Driver, TimeSpan.FromMilliseconds(time));
+            wait.PollingInterval = TimeSpan.FromMilliseconds(500);
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(WebDriverTimeoutException));
             return wait;
         }
