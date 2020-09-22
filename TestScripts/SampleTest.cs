@@ -12,7 +12,7 @@ namespace BDD_Specflow_Selenium.TestScripts
         [TestMethod]
         public void TestMethod2()
         {
-            NavigationHelper.Navigate(ObjectRepository.Config.GetUrl());
+            BrowserHelper.Navigate(ObjectRepository.Config.GetUrl());
             //GenericHelper.TakeScreenshot("Screengrab.Jpeg");
             // GenericHelper.TakeScreenshot();
             GenericHelper.FindElement(By.XPath("//input[@placeholder='Search']"), 5000).SendKeys("Shirt");

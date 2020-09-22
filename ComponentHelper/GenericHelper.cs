@@ -17,7 +17,9 @@ namespace BDD_Specflow_Selenium.ComponentHelper
     {
         public static void TakeScreenshot(string fileName = "NoNameProvided")
         {
-            ITakesScreenshot screenShotDriver = ObjectRepository.Driver as ITakesScreenshot;
+            // ITakesScreenshot screenShotDriver = ObjectRepository.Driver as ITakesScreenshot;
+            ITakesScreenshot screenShotDriver = (ITakesScreenshot)ObjectRepository.Driver;
+
             Screenshot screenshot = screenShotDriver.GetScreenshot();
             if (fileName.Equals("NoNameProvided"))
             {
@@ -29,7 +31,7 @@ namespace BDD_Specflow_Selenium.ComponentHelper
         public static bool IsElementPresent(By by)
         {
             ReadOnlyCollection<IWebElement> elements = ObjectRepository.Driver.FindElements(by);
-            return (elements.Count > 0) ? true : false;
+            return (elements.Count > 0);
         }
 
         public static IWebElement GetElement(By Locator)

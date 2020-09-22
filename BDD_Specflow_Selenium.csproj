@@ -60,7 +60,9 @@
     <Compile Include="Base\BaseTest.cs" />
     <Compile Include="ComponentHelper\ButtonHelper.cs" />
     <Compile Include="ComponentHelper\GenericHelper.cs" />
-    <Compile Include="ComponentHelper\NavigationHelper.cs" />
+    <Compile Include="ComponentHelper\BrowserHelper.cs" />
+    <Compile Include="ComponentHelper\JavaScriptExecutor.cs" />
+    <Compile Include="ComponentHelper\JavascriptPopupHelper.cs" />
     <Compile Include="ComponentHelper\WindowHelper.cs" />
     <Compile Include="Configuration\BrowserType.cs" />
     <Compile Include="Configuration\AppConfigReader.cs" />
@@ -70,6 +72,7 @@
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestScripts\SampleTest.cs" />
+    <Compile Include="TestScripts\TestBrowserWindowsFrames\WindowHandlesTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
