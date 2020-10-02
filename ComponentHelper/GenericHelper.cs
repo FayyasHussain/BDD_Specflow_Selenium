@@ -45,7 +45,7 @@ namespace BDD_Specflow_Selenium.ComponentHelper
             // Achieved through WebDriverExplicit waits.
             // Add polling while instantiating webdriver wait.
 
-            WebDriverWait wait = Webdriverwait(time);
+            WebDriverWait wait = GetWebdriverwait(time);
             return wait.Until(d => d.FindElement(by));
         }
 
@@ -72,7 +72,7 @@ namespace BDD_Specflow_Selenium.ComponentHelper
 
         public static bool IsElementVisible(By by, int time)
         {
-            WebDriverWait wait = Webdriverwait(time);
+            WebDriverWait wait = GetWebdriverwait(time);
             return wait.Until(function =>
             {
                 try
@@ -91,7 +91,7 @@ namespace BDD_Specflow_Selenium.ComponentHelper
             });
         }
 
-        private static WebDriverWait Webdriverwait(int time)
+        private static WebDriverWait GetWebdriverwait(int time)
         {
             WebDriverWait wait = new WebDriverWait(ObjectRepository.Driver, TimeSpan.FromMilliseconds(time));
             wait.PollingInterval = TimeSpan.FromMilliseconds(500);
